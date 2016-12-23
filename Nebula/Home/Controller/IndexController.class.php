@@ -28,7 +28,12 @@ class IndexController extends Controller {
     	//1、获取到微信推送过来的post数据（xml格式）
     	$postArr = $GLOBALS['HTTP_RAW_POST_DATA'];
     	//2、出来消息类型，并设置回复类型和内容
-    	/*
+    	
+		$postObj = simplexml_load_string( $postArr );
+
+
+		//判断该数据包是否是订阅消息的推送
+		/*
 			<xml>
 			<ToUserName><![CDATA[toUser]]></ToUserName>
 			<FromUserName><![CDATA[FromUser]]></FromUserName>
@@ -37,9 +42,6 @@ class IndexController extends Controller {
 			<Event><![CDATA[subscribe]]></Event>
 			</xml>
     	*/
-		$postObj = simplexml_load_string( $postArr );
-		//$postObj->ToUserName = '';
-		//判断该数据包是否是订阅消息的推送
 		if(strtolower( $postObj->MsgType == 'event' )){
 			//如果是关注 subscribe 事件
 			if(strtolower( $postObj->Event == 'subscribe' )){
@@ -49,6 +51,37 @@ class IndexController extends Controller {
 				$time 		= time();
 				$msgType	= 'text';
 				$content 	= '欢迎关注Nebulas~';
+				$template	= "<xml>
+								<ToUserName><![CDATA[%s]]></ToUserName>
+								<FromUserName><![CDATA[%s]]></FromUserName>
+								<CreateTime>%s</CreateTime>
+								<MsgType><![CDATA[%s]]></MsgType>
+								<Content><![CDATA[%s]]></Content>
+								</xml>";
+				$info		= sprintf($template,$toUser,$fromUser,$time,$msgType,$content);
+				echo $info;
+			}
+		}
+
+		//接收普通消息
+		/*
+			 <xml>
+			 <ToUserName><![CDATA[toUser]]></ToUserName>
+			 <FromUserName><![CDATA[fromUser]]></FromUserName>
+			 <CreateTime>1348831860</CreateTime>
+			 <MsgType><![CDATA[text]]></MsgType>
+			 <Content><![CDATA[this is a test]]></Content>
+			 <MsgId>1234567890123456</MsgId>
+			 </xml>
+		*/
+		if(strtolower( $postObj->MsgType == 'text' )){
+			if($postObj->Content == 'hello'){
+				//回复用户消息
+				$toUser 	= $postObj->FromUserName;
+				$fromUser 	= $postObj->ToUserName;
+				$time 		= time();
+				$msgType	= 'text';
+				$content 	= '你好呀~我是我';
 				$template	= "<xml>
 								<ToUserName><![CDATA[%s]]></ToUserName>
 								<FromUserName><![CDATA[%s]]></FromUserName>
