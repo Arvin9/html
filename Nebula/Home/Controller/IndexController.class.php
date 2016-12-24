@@ -94,4 +94,43 @@ class IndexController extends Controller {
 			}
 		}
     }
+
+	function getWxAccessToken(){
+		//1.请求url地址
+		$appid = 'wx634b55986ce038e1';
+		$appsecret =  '526531b8a84c7b071be973d5339eed27';
+		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$appid."&secret=".$appsecret;
+		//2初始化
+		$ch = curl_init();
+		//3.设置参数
+		curl_setopt($ch , CURLOPT_URL, $url);
+		curl_setopt($ch , CURLOPT_RETURNTRANSFER, 1);
+		//4.调用接口 
+		$res = curl_exec($ch);
+		//5.关闭curl
+		curl_close( $ch );
+		if( curl_errno($ch) ){
+			var_dump( curl_error($ch) );
+		}
+		$arr = json_decode($res, true);
+		var_dump( $arr );
+	}
+
+	function getWxServerIp(){
+		$accessToken = "ySzZW9fgMABx5pauplC6D7Jw_4x3tIdk6qMyjStOPW_LZFFzSzx5wyX0ED9loytv3H-rAgdRk-e9fp71PhHUkyImI7UghEDx96qeLMbsCpHFdYhKc7UsZ-3YxMjtmMQ6BEEgAIAXAA";
+		$url = "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=".$accessToken;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL,$url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		$res = curl_exec($ch);
+		curl_close($ch);
+		if(curl_errno($ch)){
+			var_dump(curl_error($ch));
+		}
+		$arr = json_decode($res,true);
+		echo "<pre>";
+		var_dump( $arr );
+		echo "</pre>";
+	}
+
 }
