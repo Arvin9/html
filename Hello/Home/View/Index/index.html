@@ -43,7 +43,8 @@
 			            	<label class="weui-label">密&nbsp;&nbsp;码：</label>
 			            </div>
 			            <div class="weui-cell__bd">
-			                <input class="weui-input" type="password" name="password" placeholder="请输入账号"/>
+			                <input class="weui-input" type="password" id="password" placeholder="请输入账号"/>
+			                <input type="password" name="password" hidden="hidden" />
 			            </div>
 			        </div>
 			        <div class="weui-cells__tips">底部说明文字底部说明文字</div>
@@ -68,7 +69,7 @@
 	    });
 
 	  	$("#form").submit(function(e){
-	  		var password = $("input[name='password']")[0].value;
+	  		var password = $("#password").val();
 	  		password = hex_md5(password);
 	  		$("input[name='password']")[0].value = password;
 			alert(password);
