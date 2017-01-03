@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>WeUI</title>
+    <title>登陆</title>
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="/Public/weui/css/weui.min.css"/>
 </head>
@@ -25,7 +25,7 @@
             	</div>
         	</div>
     		
-			<FORM id="form" method="post" action="/hello.php/Home/Index/login">
+			<FORM id="form" method="post" action="/hello.php/Home/Subject/login">
 
 				<div class="weui-cells weui-cells_form">
 					<div class="weui-cell">
@@ -43,7 +43,8 @@
 			            	<label class="weui-label">密&nbsp;&nbsp;码：</label>
 			            </div>
 			            <div class="weui-cell__bd">
-			                <input class="weui-input" type="password" name="password" placeholder="请输入账号"/>
+			                <input class="weui-input" type="password" id="password" placeholder="请输入账号"/>
+			                <input type="password" name="password" hidden="hidden" />
 			            </div>
 			        </div>
 			        <div class="weui-cells__tips">底部说明文字底部说明文字</div>
@@ -68,12 +69,9 @@
 	    });
 
 	  	$("#form").submit(function(e){
-	  		var password = $("input[name='password']")[0].value;
+	  		var password = $("#password").val();
 	  		password = hex_md5(password);
 	  		$("input[name='password']")[0].value = password;
-			alert(password);
-
-			//return false;
 		});
 	</script>
 	
