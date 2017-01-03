@@ -12,33 +12,15 @@
 </style>
 </head>
 <body ontouchstart>
-	<div class="page" style="height: 100%;">
+	<div class="page tabbar" style="height: 100%;">		
 	    <div class="page__bd" style="height: 100%;">
 	        <div class="weui-tab" style="height: 100%;">
 	            <div id="panel" class="weui-tab__panel" style="height: 100%;">
-df
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
-sdfs<br>
+	            	
+					
+
+sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>
+sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>
 sssss<br>
 
 

@@ -7,8 +7,9 @@
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="/Public/weui/css/weui.min.css"/>
 </head>
-<body>
-	<div class="page">
+<body ontouchstart>
+
+	<div class="page home">
     	<div class="page__hd">
     		<div class="weui-flex">
             	<div class="weui-flex__item">
@@ -17,14 +18,15 @@
             	<div class="weui-flex__item">
             		<div class="placeholder">
             			<h1 class="page__title">登陆</h1>
-						
+						<p class="page__desc">登陆页面</p>
             		</div>
             	</div>
             	<div class="weui-flex__item">
             		<div class="placeholder"></div>
             	</div>
         	</div>
-    		
+		</div>
+		<div class="page__bd page__bd_spacing">
 			<FORM id="form" method="post" action="/hello.php/Home/Subject/login">
 
 				<div class="weui-cells weui-cells_form">
@@ -54,8 +56,15 @@
 			        </div>
 				</div>
 			</FORM>
-
 		</div>
+		<div class="page__ft">
+	        <div class="weui-footer weui-footer_fixed-bottom">
+            	<p class="weui-footer__links">
+                	<a href="/hello.php/Home/Subject/home" class="weui-footer__link">WeUI首页</a>
+            	</p>
+            	<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>
+        	</div>
+	    </div>
 	</div>
 
 	<script src="/Public/weui/js/jquery-2.1.4.js"></script>

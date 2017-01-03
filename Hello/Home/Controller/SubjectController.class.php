@@ -12,10 +12,7 @@ class SubjectController extends Controller {
 		}
 
 		// 不带任何参数 自动定位当前操作的模板文件
-		$this->assign('name',"dddddd");
-
-
-		echo $user_info['user_id'];
+		$this->assign('account',$user_info['account']);
         $this->display();
 	}
 }
