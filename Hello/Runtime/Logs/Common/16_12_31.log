@@ -1,0 +1,6 @@
+[ 2016-12-31T00:15:26+08:00 ] 180.153.205.254 /hello.php/Test/hello
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+ERR: 无法加载模块:Test
+

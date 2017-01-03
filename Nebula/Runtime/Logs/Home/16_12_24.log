@@ -510,3 +510,91 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000386s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000465s ]
 
+[ 2016-12-24T20:53:33+08:00 ] 106.120.161.66 /nebula.php/Home/Index/getWxServerIp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+NOTIC: [2] curl_errno(): 25 is not a valid cURL handle resource /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 127 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000378s ]
+
+[ 2016-12-24T20:53:44+08:00 ] 101.199.108.53 /nebula.php/Home/Index/getWxServerIp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+NOTIC: [2] curl_errno(): 25 is not a valid cURL handle resource /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 127 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000706s ]
+
+[ 2016-12-24T22:00:30+08:00 ] 101.226.233.153 /nebula.php?signature=2676ee2c650ee5021fa3a5377d840dd819decb27&echostr=3560813535323684862&timestamp=1482588030&nonce=665139195
+WARN: 连接成功
+[ 2016-12-24T22:00:30+08:00 ] 101.226.233.153 /nebula.php?signature=2676ee2c650ee5021fa3a5377d840dd819decb27&echostr=3560813535323684862&timestamp=1482588030&nonce=665139195
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+
+[ 2016-12-24T22:01:58+08:00 ] 182.254.86.156 /nebula.php?signature=5f477cae4da13afcbad6d0b83d6b276e96557e30&timestamp=1482588118&nonce=779028928&openid=o_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-24T22:01:58+08:00 ] 182.254.86.156 /nebula.php?signature=5f477cae4da13afcbad6d0b83d6b276e96557e30&timestamp=1482588118&nonce=779028928&openid=o_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000242s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000290s ]
+
+[ 2016-12-24T23:43:40+08:00 ] 183.57.53.222 /nebula.php?signature%25252525253Dcfe9c0d1dc249008b3806f8f8d8e9f43600d6531%252525252526echostr%25252525253D997465070348640223%252525252526timestamp%25252525253D1482494559%252525252526nonce%25252525253D430459063
+WARN: 调用
+[ 2016-12-24T23:43:40+08:00 ] 183.57.53.222 /nebula.php?signature%25252525253Dcfe9c0d1dc249008b3806f8f8d8e9f43600d6531%252525252526echostr%25252525253D997465070348640223%252525252526timestamp%25252525253D1482494559%252525252526nonce%25252525253D430459063
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000509s ]
+
+[ 2016-12-24T23:43:50+08:00 ] 101.226.89.116 /nebula.php?signature%25252525253Dcfe9c0d1dc249008b3806f8f8d8e9f43600d6531%252525252526echostr%25252525253D997465070348640223%252525252526timestamp%25252525253D1482494559%252525252526nonce%25252525253D430459063
+WARN: 调用
+[ 2016-12-24T23:43:50+08:00 ] 101.226.89.116 /nebula.php?signature%25252525253Dcfe9c0d1dc249008b3806f8f8d8e9f43600d6531%252525252526echostr%25252525253D997465070348640223%252525252526timestamp%25252525253D1482494559%252525252526nonce%25252525253D430459063
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+

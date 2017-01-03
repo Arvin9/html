@@ -1,0 +1,18 @@
+[ 2016-12-30T20:24:42+08:00 ] 218.104.225.10 /hello.php/Test/hello
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006835s ]
+ERR: 无法加载模块:Test
+
+[ 2016-12-30T20:25:03+08:00 ] 218.104.225.10 /hello.php/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+ERR: 无法加载模块:Index
+
+[ 2016-12-30T23:21:39+08:00 ] 180.153.214.189 /hello.php/Index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+ERR: 无法加载模块:Index
+

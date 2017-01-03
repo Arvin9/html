@@ -1,0 +1,160 @@
+[ 2016-12-31T00:29:25+08:00 ] 101.226.33.201 /nebula.php?signature%3D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%26timestamp%3D1483100917%26nonce%3D1822922559%26openid%3Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T00:29:25+08:00 ] 101.226.33.201 /nebula.php?signature%3D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%26timestamp%3D1483100917%26nonce%3D1822922559%26openid%3Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2016-12-31T03:07:13+08:00 ] 183.57.53.196 /nebula.php?signature%253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%2526timestamp%253D1483100917%2526nonce%253D1822922559%2526openid%253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T03:07:13+08:00 ] 183.57.53.196 /nebula.php?signature%253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%2526timestamp%253D1483100917%2526nonce%253D1822922559%2526openid%253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2016-12-31T03:07:23+08:00 ] 180.153.214.152 /nebula.php?signature%253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%2526timestamp%253D1483100917%2526nonce%253D1822922559%2526openid%253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T03:07:23+08:00 ] 180.153.214.152 /nebula.php?signature%253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%2526timestamp%253D1483100917%2526nonce%253D1822922559%2526openid%253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2016-12-31T06:38:39+08:00 ] 101.226.33.208 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T06:38:39+08:00 ] 61.151.226.199 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T06:38:39+08:00 ] 61.151.226.199 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006477s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2016-12-31T06:38:39+08:00 ] 180.153.211.190 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T06:38:39+08:00 ] 180.153.211.190 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2016-12-31T06:38:39+08:00 ] 140.207.185.109 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T06:38:39+08:00 ] 140.207.185.109 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-12-31T06:38:39+08:00 ] 101.226.33.208 /nebula.php?signature%25253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%252526timestamp%25253D1483100917%252526nonce%25253D1822922559%252526openid%25253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000300s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006312s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006411s ]
+
+[ 2016-12-31T09:44:19+08:00 ] 180.163.1.46 /nebula.php?signature%2525253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%25252526timestamp%2525253D1483100917%25252526nonce%2525253D1822922559%25252526openid%2525253Do_p_Kv2bApj9GBkkv7273dzBayKs
+WARN: 调用
+[ 2016-12-31T09:44:19+08:00 ] 180.163.1.46 /nebula.php?signature%2525253D0e1b11420ef72c7142413e8a5bba9a9073dd4c99%25252526timestamp%2525253D1483100917%25252526nonce%2525253D1822922559%25252526openid%2525253Do_p_Kv2bApj9GBkkv7273dzBayKs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+NOTIC: [8] Undefined index: timestamp /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 7 行.
+NOTIC: [8] Undefined index: echostr /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 8 行.
+NOTIC: [8] Undefined index: nonce /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 9 行.
+NOTIC: [8] Undefined index: signature /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 11 行.
+NOTIC: [8] Undefined index: HTTP_RAW_POST_DATA /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 29 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 45 行.
+NOTIC: [8] Trying to get property of non-object /var/www/html/Nebula/Home/Controller/IndexController.class.php 第 77 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
