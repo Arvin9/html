@@ -69,13 +69,14 @@
 					            	<label class="weui-label">答案</label>
 					            </div>
 					            <div class="weui-cell__bd">
-					                <input class="weui-input" type="number"  placeholder="请输入答案"/>
+					            	<input id="id" hidden="hidden" />
+					                <input class="weui-input" id="solution" placeholder="请输入答案"/>
 					            </div>
 					        </div>
 					    </div>
 			            <div class="weui-form-preview__ft">
 			                <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">跳过</a>
-			                <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">提交</button>
+			                <button class="weui-form-preview__btn weui-form-preview__btn_primary" onclick="respondence()">提交</button>
 			            </div>
 			        </div>
 
@@ -115,15 +116,38 @@
 	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
 	<script>
 		$(function() {
-	  		$.post("queryBlankfill",{suggest:""},function(data){
+	  		$.post("queryBlankfill",{solution:""},function(data){
 	  			console.info(data);
-	  			$('#id').text(data.id);
+	  			$('#id').val(data.id);
 	  			$('#subject').text(data.subject);
 	  			$('#caption').text(data.caption);
 	  			$('#category_name').text(data.category_name);
 	  		});
 	    });
 
+	    function respondence(){
+	    	var solution = $('#solution').val();
+
+	    	if("" == solution){
+	    		$.alert("答案不能为空！");
+	    		return;
+	    	}
+	    	
+	    	$.post("respondence",{
+	    			id:$('#id').val(),
+	    			solution:solution
+	    		},function(data){
+		  			console.info(data);
+		  			//$('#id').text(data.id);
+		  			if('200'==data.status){
+		  				$.alert(data.message);
+		  			}
+		  			if('400'==data.status){
+		  				$.alert(data.message);
+		  			}
+		  			
+	  		});
+	    }
 	  	
 	</script>
 
