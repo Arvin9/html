@@ -33,7 +33,7 @@ sssss<br>
 	                    </span>
 	                    <p class="weui-tabbar__label">微信</p>
 	                </a>
-	                <a href="/hello.php/Home/Index/blankFilling" class="weui-tabbar__item">
+	                <a href="/hello.php/Home/Index/blankfill" class="weui-tabbar__item">
 	                    <img src="/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
 	                    <p class="weui-tabbar__label">填空</p>
 	                </a>

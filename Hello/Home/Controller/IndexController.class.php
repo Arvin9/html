@@ -26,9 +26,9 @@ class IndexController extends Controller {
     }
 
     //访问blankFilling时重定向到Subject下
-    public function blankFilling(){
+    public function blankfill(){
         // 重定向
-        $this->redirect('Subject/blankFilling');
+        $this->redirect('Subject/blankfill');
     }
 
     //登陆请求

@@ -27,7 +27,7 @@
         	</div>
 		</div>
 		<div class="page__bd page__bd_spacing">
-			<FORM id="form" method="post" action="/hello.php/Home/Subject/login">
+			<FORM id="form" method="post" action="/hello.php/Home/Index/login">
 
 				<div class="weui-cells weui-cells_form">
 					<div class="weui-cell">
@@ -60,7 +60,7 @@
 		<div class="page__ft">
 	        <div class="weui-footer weui-footer_fixed-bottom">
             	<p class="weui-footer__links">
-                	<a href="/hello.php/Home/Subject/home" class="weui-footer__link">WeUI首页</a>
+                	<a href="/hello.php/Home/Index/home" class="weui-footer__link">WeUI首页</a>
             	</p>
             	<p class="weui-footer__text">Copyright &copy; 2008-2016 weui.io</p>
         	</div>
