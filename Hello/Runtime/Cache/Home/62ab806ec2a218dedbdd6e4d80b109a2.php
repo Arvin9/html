@@ -80,9 +80,6 @@
 			            </div>
 			        </div>
 
-
-
-
         		</div>
 	            <div class="weui-tabbar">
 	                <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">

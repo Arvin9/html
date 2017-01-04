@@ -51,10 +51,10 @@ class SubjectController extends Controller {
 		$queryMinResult = $Model->query($queryMinSql);
 
 		$category_id_condition = $queryMinResult[0]['category_id'];
-		echo $category_id_condition;
+		//echo $category_id_condition;
 
 		// 以类别ID作为条件查询题目，查不到直接查询未做过的题目
-		return;
+		
 
 		// 查找用户未做过的题目
 		$sql  = "select b.id id,b.caption caption,c.name category_name,b.subject subject ";
