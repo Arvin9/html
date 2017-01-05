@@ -42,6 +42,7 @@
 			                <em class="weui-form-preview__value" id="category_name">
 			                	没有类别啦！
 			                </em>
+			                <input id="category_id" hidden="hidden" />
 			            </div>
 			            <div class="weui-form-preview__bd">
 			                <div class="weui-form-preview__item">
@@ -113,14 +114,19 @@
 	<script src="/Public/weui/js/jquery-weui.js"></script>
 	<script>
 		$(function() {
-	  		$.post("queryBlankfill",{solution:""},function(data){
+	  		queryBlankfill();
+	    });
+
+	    function queryBlankfill(){
+	    	$.post("queryBlankfill",{solution:""},function(data){
 	  			console.info(data);
 	  			$('#id').val(data.id);
+	  			$('#category_id').val(data.category_id);
 	  			$('#subject').text(data.subject);
 	  			$('#caption').text(data.caption);
 	  			$('#category_name').text(data.category_name);
 	  		});
-	    });
+	    }
 
 	    function respondence(){
 	    	var solution = $('#solution').val();
@@ -131,6 +137,7 @@
 	    	}
 	    	
 	    	$.post("respondence",{
+	    			category_id:$('#category_id').val(),
 	    			id:$('#id').val(),
 	    			solution:solution
 	    		},function(data){
@@ -138,6 +145,7 @@
 		  			//$('#id').text(data.id);
 		  			if('200'==data.status){
 		  				$.alert(data.message);
+		  				queryBlankfill();
 		  			}
 		  			if('400'==data.status){
 		  				$.alert(data.message);

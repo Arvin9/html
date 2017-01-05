@@ -54,41 +54,86 @@ class SubjectController extends Controller {
 		//echo $category_id_condition;
 
 		// 以类别ID作为条件查询题目，查不到直接查询未做过的题目
+		$sqlCategory  = "select b.id id,b.caption caption,c.name category_name,b.subject subject,b.category_id category_id ";
+		$sqlCategory .=	"from think_blankfill b ";
+		$sqlCategory .=	"left join think_category c ";
+		$sqlCategory .=	"on b.category_id=c.id ";
+		$sqlCategory .=	"where b.id not in( ";
+		$sqlCategory .=	"	select blankfill_id ";
+		$sqlCategory .=	"	from think_record ";
+		$sqlCategory .=	"	where user_id = ".$user_id;
+		$sqlCategory .=	") ";
+		$sqlCategory .=	"and b.category_id = ".$category_id_condition;
+		$result = $Model->query($sqlCategory);
+		if(null == $result){
+			// 查找用户未做过的题目
+			$sql  = "select b.id id,b.caption caption,c.name category_name,b.subject subject,b.category_id category_id ";
+			$sql .=	"from think_blankfill b ";
+			$sql .=	"left join think_category c ";
+			$sql .=	"on b.category_id=c.id ";
+			$sql .=	"where b.id not in( ";
+			$sql .=	"	select blankfill_id ";
+			$sql .=	"	from think_record ";
+			$sql .=	"	where user_id = ".$user_id;
+			$sql .=	")";
+			$result = $Model->query($sql);
+		}
 		
-
-		// 查找用户未做过的题目
-		$sql  = "select b.id id,b.caption caption,c.name category_name,b.subject subject ";
-		$sql .=	"from think_blankfill b ";
-		$sql .=	"left join think_category c ";
-		$sql .=	"on b.category_id=c.id ";
-		$sql .=	"where b.id not in( ";
-		$sql .=	"	select blankfill_id ";
-		$sql .=	"	from think_record ";
-		$sql .=	"	where user_id = ".$user_id;
-		$sql .=	")";
-		$result = $Model->query($sql);
 		$len = count($result);	//结果级长度
 		$this->ajaxReturn($result[0]);
 	}
 
 	public function respondence(){
+		//获取用户ID
+		$user_id = $_SESSION['user_info']['user_id'];
+
 		//获取用户输入答案和题目ID
         $id = $_POST['id'];
+        $category_id = $_POST['category_id']; 
         $inSolution = $_POST['solution'];
 
         //根据题目ID查询题目答案
         $Blankfill = M("Blankfill"); // 实例化User对象
 		$solution = $Blankfill->where('id='.$id)->getField('solution');
 
-		$response = array();
-		if($solution == $inSolution){
-			//将答题记录插入数据库
+		$response = array();  //声明返回数组
 
-			//返回正确信息
+		// 查询是否有答题记录，没有则创建
+		$Record = D('Record'); // 实例化Record对象
+		$condition['user_id'] = $user_id;
+		$condition['blankfill_id'] = $id;
+		$flag = $Record->where($condition)->select();
+		if(null == $flag){
+			// 创建答题记录
+			$Record = D('Record');
+			$Record->user_id = $user_id;
+			$Record->blankfill_id = $id;
+			$Record->add();
+		} 
+
+		if($solution == $inSolution){
+			// 更新答题记录
+			$Record = D('Record'); 
+			$condition['user_id'] = $user_id;
+			$condition['blankfill_id'] = $id;
+			$Record->where($condition)->setField('is_correct',1);			
+			
+			// 更新统计记录
+			$Statistics = D('Statistics'); 
+			$condition['user_id'] = $user_id;
+			$condition['category_id'] = $category_id;
+			$Statistics->where($condition)->setInc('count'); //count记录加1
+			
+			// 返回正确信息
 			$response['status'] = 200;
 			$response['message'] = "答题正确！";
 			$response['data'] = true;
 		}else{
+			// 更新答题记录
+			$Record = D('Record'); 
+			$condition['user_id'] = $user_id;
+			$condition['blankfill_id'] = $id;
+			$Record->where($condition)->setInc('count'); //count记录加1
 			//返回错误信息
 			$response['status'] = 400;
 			$response['message'] = "答题错误！";
