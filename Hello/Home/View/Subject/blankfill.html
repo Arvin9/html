@@ -76,8 +76,8 @@
 					        </div>
 					    </div>
 			            <div class="weui-form-preview__ft">
-			                <a class="weui-form-preview__btn weui-form-preview__btn_default" onclick="skip()">跳过</a>
-			                <button class="weui-form-preview__btn weui-form-preview__btn_primary" onclick="respondence()">提交</button>
+			                <button id="skipBt" class="weui-form-preview__btn weui-form-preview__btn_primary" onclick="skip()">跳过</button>
+			                <button id="commitBt" class="weui-form-preview__btn weui-form-preview__btn_primary" onclick="respondence()">提交</button>
 			            </div>
 			        </div>
 
@@ -125,6 +125,13 @@
 		  			$('#subject').text("没有内容啦！");
 		  			$('#caption').text("没有题目啦！");
 		  			$('#category_name').text("没有类别啦！");
+
+					$("#skipBt").removeClass("weui-form-preview__btn_primary");
+		  			$("#skipBt").addClass("weui-form-preview__btn_default");
+		  			$("#commitBt").removeClass("weui-form-preview__btn_primary");
+		  			$("#commitBt").addClass("weui-form-preview__btn_default");
+		  			$("#skipBt").attr("disabled","disabled");
+		  			$("#commitBt").attr("disabled","disabled");
 		  			return;
 	    		}
 	  			

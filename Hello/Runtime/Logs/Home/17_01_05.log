@@ -2768,3 +2768,1681 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
 SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0014s ]
 ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
 
+[ 2017-01-05T22:13:36+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:14:41+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0013s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:15:15+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000328s ]
+
+[ 2017-01-05T22:15:15+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+
+[ 2017-01-05T22:27:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000337s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000375s ]
+
+[ 2017-01-05T22:27:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: ID为1001的用户缺失类别ID为4的类别
+[ 2017-01-05T22:27:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `think_statistics` [ RunTime:0.0014s ]
+SQL: INSERT INTO `think_statistics` (`user_id`,`category_id`) VALUES ('1001','4') [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0013s ]
+
+[ 2017-01-05T22:27:04+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0015s ]
+SQL: SELECT `solution` FROM `think_blankfill` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `think_record` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `think_record` WHERE `user_id` = 1001 AND `blankfill_id` = 6  [ RunTime:0.0008s ]
+SQL: INSERT INTO `think_record` (`user_id`,`blankfill_id`) VALUES ('1001','6') [ RunTime:0.0008s ]
+SQL: UPDATE `think_record` SET `count`=count+1 WHERE `user_id` = 1001 AND `blankfill_id` = 6 [ RunTime:0.0010s ]
+
+[ 2017-01-05T22:27:04+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0014s ]
+
+[ 2017-01-05T22:27:09+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000100s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2017-01-05T22:27:10+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+
+[ 2017-01-05T22:27:31+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+SQL: SELECT `solution` FROM `think_blankfill` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `think_record` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `think_record` WHERE `user_id` = 1001 AND `blankfill_id` = 5  [ RunTime:0.0008s ]
+SQL: INSERT INTO `think_record` (`user_id`,`blankfill_id`) VALUES ('1001','5') [ RunTime:0.0008s ]
+SQL: UPDATE `think_record` SET `count`=count+1 WHERE `user_id` = 1001 AND `blankfill_id` = 5 [ RunTime:0.0008s ]
+
+[ 2017-01-05T22:27:31+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+
+[ 2017-01-05T22:29:13+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004292s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000306s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2017-01-05T22:29:13+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0011s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0011s ]
+
+[ 2017-01-05T22:29:30+08:00 ] 117.136.75.208 /hello.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003934s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000301s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2017-01-05T22:29:39+08:00 ] 117.136.75.208 /hello.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `think_user` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `think_user` WHERE `account` = 'nebula'  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003913s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2017-01-05T22:29:41+08:00 ] 117.136.75.208 /hello.php/Home/Index/blankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+
+[ 2017-01-05T22:29:41+08:00 ] 117.136.75.208 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004485s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2017-01-05T22:29:41+08:00 ] 117.136.75.208 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+
+[ 2017-01-05T22:35:21+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004480s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000096s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000309s ]
+
+[ 2017-01-05T22:35:21+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+
+[ 2017-01-05T22:35:29+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0014s ]
+SQL: SELECT `solution` FROM `think_blankfill` WHERE ( id=6 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `think_record` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `think_record` WHERE `user_id` = 1001 AND `blankfill_id` = 6  [ RunTime:0.0008s ]
+SQL: UPDATE `think_record` SET `is_correct`='1' WHERE `user_id` = 1001 AND `blankfill_id` = 6 [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `think_statistics` [ RunTime:0.0011s ]
+SQL: UPDATE `think_statistics` SET `count`=count+1 WHERE `user_id` = 1001 AND `category_id` = 4 [ RunTime:0.0008s ]
+
+[ 2017-01-05T22:35:29+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+
+[ 2017-01-05T22:35:32+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0014s ]
+SQL: SELECT `solution` FROM `think_blankfill` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_record` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `think_record` WHERE `user_id` = 1001 AND `blankfill_id` = 5  [ RunTime:0.0007s ]
+SQL: UPDATE `think_record` SET `is_correct`='1' WHERE `user_id` = 1001 AND `blankfill_id` = 5 [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think_statistics` [ RunTime:0.0016s ]
+SQL: UPDATE `think_statistics` SET `count`=count+1 WHERE `user_id` = 1001 AND `category_id` = 3 [ RunTime:0.0008s ]
+
+[ 2017-01-05T22:35:32+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000345s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0014s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:35:35+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004553s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000084s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2017-01-05T22:35:35+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:35:37+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:35:51+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004572s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004629s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000097s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000143s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2017-01-05T22:35:51+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000294s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:35:52+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000313s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000341s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2017-01-05T22:35:52+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:36:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005050s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005119s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000091s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000365s ]
+
+[ 2017-01-05T22:36:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:36:25+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:17+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004632s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004690s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000121s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-01-05T22:37:18+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:37:19+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0017s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:19+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0013s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:20+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0016s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:20+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0017s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:28+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004516s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2017-01-05T22:37:29+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:37:30+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:32+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:37:44+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004355s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000292s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2017-01-05T22:37:44+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:37:45+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000441s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000508s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0013s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:07+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006299s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000314s ]
+
+[ 2017-01-05T22:38:07+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000382s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:38:09+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000303s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0013s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:09+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:10+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000322s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0020s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:10+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:11+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:13+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0015s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:22+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005055s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000296s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2017-01-05T22:38:22+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0012s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:38:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:24+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0017s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:24+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000446s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0016s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:35+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005891s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000108s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2017-01-05T22:38:35+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:38:36+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000460s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006558s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000472s ]
+
+[ 2017-01-05T22:38:36+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:38:37+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0013s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:38:45+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004315s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004383s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000132s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-01-05T22:38:45+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:38:46+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000237s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0012s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:39:28+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005662s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000344s ]
+
+[ 2017-01-05T22:39:28+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000243s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:39:30+08:00 ] 218.104.225.10 /hello.php/Home/Subject/respondence
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `think_blankfill` [ RunTime:0.0014s ]
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+
+[ 2017-01-05T22:40:41+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2017-01-05T22:40:41+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:40:46+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004953s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000128s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000287s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000322s ]
+
+[ 2017-01-05T22:40:46+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:40:46+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013945s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014019s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000417s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2017-01-05T22:40:47+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:41:14+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000119s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004493s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004540s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000294s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2017-01-05T22:41:15+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000334s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:46:31+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004345s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000085s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000118s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000303s ]
+
+[ 2017-01-05T22:46:32+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0008s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:50:26+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000082s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000115s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2017-01-05T22:50:26+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:08+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004325s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000098s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000134s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2017-01-05T22:51:08+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:22+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004253s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000112s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2017-01-05T22:51:22+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004041s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2017-01-05T22:51:23+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000320s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:40+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004453s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004530s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000130s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000313s ]
+
+[ 2017-01-05T22:51:41+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:57+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004242s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000088s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000120s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000302s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2017-01-05T22:51:57+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:51:58+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004042s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004088s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000094s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000296s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+
+[ 2017-01-05T22:51:58+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000308s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:52:11+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000297s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004217s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000095s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2017-01-05T22:52:11+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:52:12+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004682s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2017-01-05T22:52:12+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:52:13+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004256s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004310s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000080s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2017-01-05T22:52:14+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000410s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0008s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:52:14+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000277s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004574s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000087s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2017-01-05T22:52:15+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000319s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0007s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:53:01+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000495s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004235s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004303s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000090s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000330s ]
+
+[ 2017-01-05T22:53:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0011s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:53:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005455s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000106s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000299s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000338s ]
+
+[ 2017-01-05T22:53:02+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0011s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:53:06+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038719s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038827s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2017-01-05T22:53:06+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000315s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0010s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0010s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
+[ 2017-01-05T22:53:12+08:00 ] 218.104.225.10 /hello.php/Home/Subject/blankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000107s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000537s ]
+
+[ 2017-01-05T22:53:12+08:00 ] 218.104.225.10 /hello.php/Home/Subject/queryBlankfill
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: select id from think_category where id not in( select category_id from think_statistics where user_id = 1001) [ RunTime:0.0009s ]
+SQL: select category_id from think_statistics where user_id = 1001 order by count asc limit 1 [ RunTime:0.0009s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_blankfill b left join think_category c on b.category_id=c.id) 	left join think_statistics s 	on c.id=s.category_id) where b.id not in(  	select blankfill_id	from think_record 	where user_id=1001) order by s.count asc [ RunTime:0.0014s ]
+SQL: select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name from ((think_record r left join think_blankfill b on b.id=r.blankfill_id) 	left join think_category c 	on b.category_id=c.id) where r.is_correct=0 and r.user_id=1001 order by r.count asc  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined offset: 0 /var/www/html/Hello/Home/Controller/SubjectController.class.php 第 88 行.
+
