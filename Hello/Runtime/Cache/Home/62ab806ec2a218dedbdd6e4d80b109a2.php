@@ -76,7 +76,7 @@
 					        </div>
 					    </div>
 			            <div class="weui-form-preview__ft">
-			                <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">跳过</a>
+			                <a class="weui-form-preview__btn weui-form-preview__btn_default" onclick="skip()">跳过</a>
 			                <button class="weui-form-preview__btn weui-form-preview__btn_primary" onclick="respondence()">提交</button>
 			            </div>
 			        </div>
@@ -119,7 +119,15 @@
 
 	    function queryBlankfill(){
 	    	$.post("queryBlankfill",{solution:""},function(data){
-	  			console.info(data);
+	    		// 没有题目时提示没有题目
+	    		console.info(data);
+	    		if(!data){
+		  			$('#subject').text("没有内容啦！");
+		  			$('#caption').text("没有题目啦！");
+		  			$('#category_name').text("没有类别啦！");
+		  			return;
+	    		}
+	  			
 	  			$('#id').val(data.id);
 	  			$('#category_id').val(data.category_id);
 	  			$('#subject').text(data.subject);
@@ -151,6 +159,18 @@
 		  				$.alert(data.message);
 		  			}
 		  			
+	  		});
+	    }
+
+	    function skip(){
+	    	//发送一个错误答案，并重新请求题目
+	    	$.post("respondence",{
+	    			category_id:$('#category_id').val(),
+	    			id:$('#id').val(),
+	    			solution:""
+	    		},function(data){
+		  			console.info(data);
+		  			queryBlankfill();
 	  		});
 	    }
 	  	

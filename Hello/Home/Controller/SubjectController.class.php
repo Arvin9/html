@@ -16,7 +16,11 @@ class SubjectController extends Controller {
 		$this->assign('account',$user_info['account']);
         $this->display();
 	}
-
+	/**
+	 * 主要思想：
+	 * 优先查找未做过的题目，并按统计的count进行顺序排序，也就是说未做过的且统计记录中类别数最小的优先
+	 * 其次查找做错的题目，按照错误次数顺序排序
+	 */
 	public function queryBlankfill(){
 		//获取用户ID
 		$user_id = $_SESSION['user_info']['user_id'];
@@ -51,31 +55,32 @@ class SubjectController extends Controller {
 		$queryMinResult = $Model->query($queryMinSql);
 
 		$category_id_condition = $queryMinResult[0]['category_id'];
-		//echo $category_id_condition;
 
-		// 以类别ID作为条件查询题目，查不到直接查询未做过的题目
-		$sqlCategory  = "select b.id id,b.caption caption,c.name category_name,b.subject subject,b.category_id category_id ";
-		$sqlCategory .=	"from think_blankfill b ";
+		// 查找未做过的题目，按照statistics统计count排序
+		$sqlCategory  = "select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name ";
+		$sqlCategory .=	"from ((think_blankfill b ";
 		$sqlCategory .=	"left join think_category c ";
-		$sqlCategory .=	"on b.category_id=c.id ";
-		$sqlCategory .=	"where b.id not in( ";
-		$sqlCategory .=	"	select blankfill_id ";
+		$sqlCategory .=	"on b.category_id=c.id) ";
+		$sqlCategory .=	"	left join think_statistics s ";
+		$sqlCategory .=	"	on c.id=s.category_id) ";
+		$sqlCategory .=	"where b.id not in(  ";
+		$sqlCategory .=	"	select blankfill_id";
 		$sqlCategory .=	"	from think_record ";
-		$sqlCategory .=	"	where user_id = ".$user_id;
+		$sqlCategory .=	"	where user_id=".$user_id;
 		$sqlCategory .=	") ";
-		$sqlCategory .=	"and b.category_id = ".$category_id_condition;
+		$sqlCategory .=	"order by s.count asc";
 		$result = $Model->query($sqlCategory);
 		if(null == $result){
-			// 查找用户未做过的题目
-			$sql  = "select b.id id,b.caption caption,c.name category_name,b.subject subject,b.category_id category_id ";
-			$sql .=	"from think_blankfill b ";
-			$sql .=	"left join think_category c ";
-			$sql .=	"on b.category_id=c.id ";
-			$sql .=	"where b.id not in( ";
-			$sql .=	"	select blankfill_id ";
-			$sql .=	"	from think_record ";
-			$sql .=	"	where user_id = ".$user_id;
-			$sql .=	")";
+			// 查找用户未做错的题目，按照record记录的count排序
+			$sql  = "select b.id id,b.caption caption,b.category_id category_id,b.subject subject,c.name category_name ";
+			$sql .=	"from ((think_record r ";
+			$sql .=	"left join think_blankfill b ";
+			$sql .=	"on b.id=r.blankfill_id) ";
+			$sql .=	"	left join think_category c ";
+			$sql .=	"	on b.category_id=c.id) ";
+			$sql .=	"where r.is_correct=0 ";
+			$sql .=	"and r.user_id=".$user_id;
+			$sql .=	" order by r.count asc ";
 			$result = $Model->query($sql);
 		}
 		
@@ -129,7 +134,7 @@ class SubjectController extends Controller {
 			$response['message'] = "答题正确！";
 			$response['data'] = true;
 		}else{
-			// 更新答题记录
+			// 更新答题错误记录
 			$Record = D('Record'); 
 			$condition['user_id'] = $user_id;
 			$condition['blankfill_id'] = $id;
