@@ -3,6 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 use Think\Model;
 class SubjectController extends Controller {
+	//访问analyze时重定向到Analyze下
+    public function analyze(){
+        $this->redirect('Analyze/analyze');	// 重定向
+    }
+
 	// 填空题页面
 	public function blankfill(){
 		// 检验用户是否登陆
@@ -16,6 +21,9 @@ class SubjectController extends Controller {
 		$this->assign('account',$user_info['account']);
         $this->display();
 	}
+
+
+
 	/**
 	 * 主要思想：
 	 * 优先查找未做过的题目，并按统计的count进行顺序排序，也就是说未做过的且统计记录中类别数最小的优先

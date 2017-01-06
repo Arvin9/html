@@ -2,6 +2,16 @@
 namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
+	//访问blankFilling时重定向到Subject下
+    public function blankfill(){
+        $this->redirect('Subject/blankfill');	// 重定向
+    }
+    //访问analyze时重定向到Analyze下
+    public function analyze(){
+        $this->redirect('Analyze/analyze');     // 重定向
+    }
+
+
     //登陆页面
     public function index(){
         // 检验用户是否登陆
@@ -25,11 +35,7 @@ class IndexController extends Controller {
         $this->display();
     }
 
-    //访问blankFilling时重定向到Subject下
-    public function blankfill(){
-        // 重定向
-        $this->redirect('Subject/blankfill');
-    }
+
 
     //登陆请求
     public function login(){
