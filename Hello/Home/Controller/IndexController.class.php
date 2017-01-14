@@ -1,6 +1,7 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
+use Think\Model;
 class IndexController extends Controller {
 	//访问blankFilling时重定向到Subject下
     public function blankfill(){
@@ -32,6 +33,7 @@ class IndexController extends Controller {
             $this->display('Index/index');
             return;
         }
+        $this->assign('account',$user_info['account']);
         $this->display();
     }
 
@@ -88,13 +90,21 @@ class IndexController extends Controller {
         }
     }
 
-    public function getBytes($string) { 
-        $bytes = array();
-        $str = ""; 
-        for($i = 0; $i < strlen($string); $i++){ 
-             $bytes[i] = ord($string[$i]);
-             $str = $str.$bytes[i]; 
-        }
-        echo $str;  
+    public function getDynamics() { 
+
+        $Model = new Model(); // 实例化一个model对象 没有对应任何数据表
+        // 检查用户统计记录是否符合类别列表
+        $sql  = "select u.account account,a.description description,a.url url,d.create_time create_time ";
+        $sql .= "from ((think_dynamic d ";
+        $sql .= "left join think_user u ";
+        $sql .= "on d.user_id=u.id) ";
+        $sql .= "  left join think_action a ";
+        $sql .= "  on d.action_id=a.id ";
+        $sql .= ")";
+        $sql .= "order by d.create_time desc ";
+        $sql .= "limit 6 ";
+        $result = $Model->query($sql);
+
+        $this->ajaxReturn($result);
     } 
 }

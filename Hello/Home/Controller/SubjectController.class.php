@@ -7,6 +7,10 @@ class SubjectController extends Controller {
     public function analyze(){
         $this->redirect('Analyze/analyze');	// 重定向
     }
+    //访问home时重定向到Index下
+    public function home(){
+        $this->redirect('Index/home');   // 重定向
+    }
 
 	// 填空题页面
 	public function blankfill(){

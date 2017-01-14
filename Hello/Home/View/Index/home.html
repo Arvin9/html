@@ -12,26 +12,37 @@
 </style>
 </head>
 <body ontouchstart>
+	
 	<div class="page tabbar" style="height: 100%;">		
+	    
 	    <div class="page__bd" style="height: 100%;">
 	        <div class="weui-tab" style="height: 100%;">
 	            <div id="panel" class="weui-tab__panel" style="height: 100%;">
-	            	
-					
+	            	<div class="weui-cells__title">
 
-sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>
-sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>sdfs<br>
-sssss<br>
+	            	</div>
+		            <div class="weui-cells">
+				        <div class="weui-cell">
+				            <div class="weui-cell__bd">
+				                <p>首页</p>
+				            </div>
+				            <div class="weui-cell__ft">
+			                	{$account}
+			                </div>
+			            </div>
+			        </div>
 
-
+			        <div id="dynamic"></div>
+			        
+		            	
         		</div>
 	            <div class="weui-tabbar">
-	                <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+	                <a href="__URL__/home" class="weui-tabbar__item weui-bar__item_on">
 	                    <span style="display: inline-block;position: relative;">
 	                        <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
 	                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
 	                    </span>
-	                    <p class="weui-tabbar__label">微信</p>
+	                    <p class="weui-tabbar__label">首页</p>
 	                </a>
 	                <a href="__URL__/blankfill" class="weui-tabbar__item">
 	                    <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
@@ -53,19 +64,34 @@ sssss<br>
 	    </div>
 	</div>
 
-	
-
-	
-
 	<script src="__ROOT__/Public/weui/js/jquery-2.1.4.js"></script>
 	<script src="__ROOT__/Public/weui/js/fastclick.js"></script>
+	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
+
 	<script>
 	  $(function() {
-	  	//$.alert(window.screen.height);
-	    //$('#panel').height(window.screen.height-50);
+	  	$.get("getDynamics",function(data){
+	  		var len = data.length;
+	  		var content = 	'<div class="weui-cells__title">'+
+			        		'</div>'+
+			        		'<div class="weui-cells">';
+	  		for (var i=len-1;i>=0;i--){
+	  			console.log(data[i]);
+	  			content += '<a class="weui-cell weui-cell_access" href="__URL__/'+ data[i].url +'">'+
+			                	'<div class="weui-cell__bd">'+
+			                    	'<p>'+data[i].account+data[i].description+'</p>'+
+			                    	'<span style="color:#999">'+data[i].create_time+'</span>'+
+			                	'</div>'+
+			               		'<div class="weui-cell__ft">'+'</div>'+
+			               	'</a>';
+
+	  		}
+	  		content += '</div>';
+	  		$('#dynamic').append(content);
+	  	});
 	  });
 	</script>
-	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
+	
 
 </body>
 </html>
