@@ -70,6 +70,13 @@ class IndexController extends Controller {
                 $user_info['account'] = $account;
                 $_SESSION['user_info'] = $user_info;
 
+                // 插入用户登录成功动态
+                $Dynamic = D('Dynamic');
+                $Dynamic->user_id = $id;
+                $Dynamic->action_id = 1;
+                $Dynamic->create_time = date("Y-m-d H:i:s",time());
+                $Dynamic->add();
+
                 $this->assign('account',$account);
                 $this->assign('password',$password);
                 $this->display('home');

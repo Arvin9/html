@@ -17,6 +17,13 @@ class SubjectController extends Controller {
 			return;
 		}
 
+		// 插入用户进入答题页面动态
+        $Dynamic = D('Dynamic');
+        $Dynamic->user_id = $user_info['user_id'];
+        $Dynamic->action_id = 2;
+        $Dynamic->create_time = date("Y-m-d H:i:s",time());
+        $Dynamic->add();
+
 		// 不带任何参数 自动定位当前操作的模板文件
 		$this->assign('account',$user_info['account']);
         $this->display();

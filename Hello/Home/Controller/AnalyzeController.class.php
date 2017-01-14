@@ -18,6 +18,7 @@ class AnalyzeController extends Controller {
         }
         */
         $this->display();
+
     }
 
 
