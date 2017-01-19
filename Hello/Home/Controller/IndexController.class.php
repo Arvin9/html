@@ -12,6 +12,10 @@ class IndexController extends Controller {
         $this->redirect('Analyze/analyze');     // 重定向
     }
 
+    //注册页面
+    public function register(){
+        $this->display(); // 不带任何参数 自动定位当前操作的模板文件
+    }
 
     //登陆页面
     public function index(){
