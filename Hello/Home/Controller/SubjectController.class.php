@@ -12,14 +12,14 @@ class SubjectController extends Controller {
         $this->redirect('Index/home');   // 重定向
     }
 
-	// 填空题页面
-	public function blankfill(){
-		// 检验用户是否登陆
-		$user_info = $_SESSION['user_info'];
-		if(is_null($user_info['user_id'])){
-			$this->redirect('Index/index');
-			return;
-		}
+	   // 填空题页面
+	  public function blankfill(){
+		    // 检验用户是否登陆
+		    $user_info = $_SESSION['user_info'];
+		    if(is_null($user_info['user_id'])){
+			       $this->redirect('Index/index');
+			       return;
+		    }
 
 		// 插入用户进入答题页面动态
         $Dynamic = D('Dynamic');
@@ -56,15 +56,15 @@ class SubjectController extends Controller {
 		$checkResult = $Model->query($checkSql);
 		if(null != $checkResult){
 			//在统计记录中添加用户缺失的类别记录
-			foreach($checkResult as $cr){ 
+			foreach($checkResult as $cr){
 		    	\Think\Log::write("ID为".$user_id."的用户缺失类别ID为".$cr['id']."的类别",'INFO');
 		    	$Statistics = D('Statistics');
 		    	$Statistics->user_id = $user_id;
 				$Statistics->category_id = $cr['id'];
 				$Statistics->add();
-		    } 
+		    }
 		}
-		
+
 		// 查询统计中最少量的类别ID
 		$queryMinSql  = "select category_id ";
 		$queryMinSql .= "from think_statistics ";
@@ -102,7 +102,7 @@ class SubjectController extends Controller {
 			$sql .=	" order by r.count asc ";
 			$result = $Model->query($sql);
 		}
-		
+
 		$len = count($result);	//结果级长度
 		$this->ajaxReturn($result[0]);
 	}
@@ -113,7 +113,7 @@ class SubjectController extends Controller {
 
 		//获取用户输入答案和题目ID
         $id = $_POST['id'];
-        $category_id = $_POST['category_id']; 
+        $category_id = $_POST['category_id'];
         $inSolution = $_POST['solution'];
 
         //根据题目ID查询题目答案
@@ -133,28 +133,28 @@ class SubjectController extends Controller {
 			$Record->user_id = $user_id;
 			$Record->blankfill_id = $id;
 			$Record->add();
-		} 
+		}
 
 		if($solution == $inSolution){
 			// 更新答题记录
-			$Record = D('Record'); 
+			$Record = D('Record');
 			$condition['user_id'] = $user_id;
 			$condition['blankfill_id'] = $id;
-			$Record->where($condition)->setField('is_correct',1);			
-			
+			$Record->where($condition)->setField('is_correct',1);
+
 			// 更新统计记录
-			$Statistics = D('Statistics'); 
+			$Statistics = D('Statistics');
 			$condition['user_id'] = $user_id;
 			$condition['category_id'] = $category_id;
 			$Statistics->where($condition)->setInc('count'); //count记录加1
-			
+
 			// 返回正确信息
 			$response['status'] = 200;
 			$response['message'] = "答题正确！";
 			$response['data'] = true;
 		}else{
 			// 更新答题错误记录
-			$Record = D('Record'); 
+			$Record = D('Record');
 			$condition['user_id'] = $user_id;
 			$condition['blankfill_id'] = $id;
 			$Record->where($condition)->setInc('count'); //count记录加1

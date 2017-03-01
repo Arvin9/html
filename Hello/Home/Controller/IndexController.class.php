@@ -55,10 +55,10 @@ class IndexController extends Controller {
         //$condition['password'] 	= $password;
 
         $User = M("User"); // 实例化User对象
-       
+
         // 把查询条件传入查询方法
         $result = $User->where($condition)->select();
-        
+
         // 检验查询结果
         if($result){
             $id = $result[0]['id'];
@@ -93,8 +93,8 @@ class IndexController extends Controller {
             $this->error('无此用户！');
         }
     }
-
-    public function getDynamics() { 
+    // 获取用户动态信息
+    public function getDynamics() {
 
         $Model = new Model(); // 实例化一个model对象 没有对应任何数据表
         // 检查用户统计记录是否符合类别列表
@@ -110,5 +110,56 @@ class IndexController extends Controller {
         $result = $Model->query($sql);
 
         $this->ajaxReturn($result);
-    } 
+    }
+
+    // 用户名检验
+    function verifyUsername(){
+        // 获取用户名
+        $username = $_POST['username'];
+        //设置查询条件
+        $condition['_logic'] 	= 'AND';
+        $condition['account'] 	= $username;
+        $User = M("User"); // 实例化User对象
+
+        // 把查询条件传入查询方法
+        $result = $User->where($condition)->select();
+        if ($result) {
+            // 返回用户已存在
+            $response['message'] = "用户已存在！";
+            $response['data'] = false;
+        } else {
+            // 返回用户已存在
+            $response['message'] = "用户不存在，可以进行注册";
+            $response['data'] = true;
+        }
+        $this->ajaxReturn($response);
+    }
+
+    // 用户进行注册
+    function registerUser(){
+        //获取用户输入账号密码
+        $account 	= $_POST['username'];
+        $password 	= $_POST['password'];
+        $salt = md5(time());
+        //将用户输入的密码+用户名+salt并进行MD5操作
+        $md5_password = md5($password.$account.$salt);
+
+        // 插入用户登录成功动态
+        $User = D('User');
+
+        $User->account = $account;
+        $User->password = $md5_password;
+        $User->salt = $salt;
+        $User->add_time = date("Y-m-d H:i:s",time());
+
+        $result = $User->add();
+        if($result) {
+            $response['message'] = "注册成功";
+            $response['data'] = true;
+        }else{
+            $response['message'] = "注册失败";
+            $response['data'] = false;
+        }
+        $this->ajaxReturn($response);
+    }
 }

@@ -6,6 +6,7 @@
     <title>登陆</title>
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="__ROOT__/Public/weui/css/weui.min.css"/>
+    <link rel="stylesheet" href="__ROOT__/Public/weui/css/jquery-weui.min.css"/>
 </head>
 <body ontouchstart>
 
@@ -55,7 +56,7 @@
 			            <input class="weui-btn weui-btn_primary" type="submit" value="确定" />
 			        </div>
 			        <div class="weui-cells__tips">
-			        	没有账号？前往<a href="__URL__/register">注册</a>
+			        	没有账号？前往<a onclick="register()">注册</a>
 			        </div>
 				</div>
 			</FORM>
@@ -72,20 +73,68 @@
 
 	<script src="__ROOT__/Public/weui/js/jquery-2.1.4.js"></script>
 	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
-	<script src="__ROOT__/Public/weui/js/md5.min.js"></script> 
+	<script src="__ROOT__/Public/weui/js/md5.min.js"></script>
 	<script src="__ROOT__/Public/weui/js/fastclick.js"></script>
 	<script>
 		$(function() {
 	  		//$.alert(window.screen.height);
 	    	//$('#panel').height(window.screen.height-50);
-	    });
 
-	  	$("#form").submit(function(e){
+	  });
+    // 用户登录
+	  $("#form").submit(function(e){
 	  		var password = $("#password").val();
 	  		password = hex_md5(password);
 	  		$("input[name='password']")[0].value = password;
 		});
+    // 用户注册
+    function register(){
+        $.login({
+            title: '欢迎注册',
+            text: '',
+            autoClose: false,
+            username: '',  // 默认用户名
+            password: '',  // 默认密码
+            // 点击确认
+            onOK: function (username, password) {
+                $.post("__URL__/verifyUsername",{username:username},function(result){
+                    if (!result.data) {
+                        // 用户已存在
+                        $.alert('注册失败！用户已存在!');
+                        return;
+                    }
+                    // 发起注册请求
+                    $.post("__URL__/registerUser",{username:username,password:hex_md5(password)},function(result){
+                        if (result) {
+                            $.alert('注册成功');
+                        } else {
+                            $.alert('注册失败');
+                        }
+                    });
+                });
+
+            },
+            onCancel: function () {
+                $.closeModal();
+            }
+        });
+        // 绑定用户注册时输入用户名事件
+        $('#weui-prompt-username').keyup(verifyUsername);
+    }
+
+    // 验证用户名
+    function verifyUsername(){
+        var username = $('#weui-prompt-username').val();
+        $.post("__URL__/verifyUsername",{username:username},function(result){
+            if (!result.data) {
+                // 用户已存在
+                $('.weui-prompt-text').text('用户名已存在!').css('color','red');
+                return;
+            }
+            $('.weui-prompt-text').text('');
+        });
+    }
 	</script>
-	
+
 </body>
 </html>
