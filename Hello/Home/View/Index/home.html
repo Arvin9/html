@@ -12,9 +12,9 @@
 </style>
 </head>
 <body ontouchstart>
-	
-	<div class="page tabbar" style="height: 100%;">		
-	    
+
+	<div class="page tabbar" style="height: 100%;">
+
 	    <div class="page__bd" style="height: 100%;">
 	        <div class="weui-tab" style="height: 100%;">
 	            <div id="panel" class="weui-tab__panel" style="height: 100%;">
@@ -33,8 +33,8 @@
 			        </div>
 
 			        <div id="dynamic"></div>
-			        
-		            	
+
+
         		</div>
 	            <div class="weui-tabbar">
 	                <a href="__URL__/home" class="weui-tabbar__item weui-bar__item_on">
@@ -71,12 +71,12 @@
 	<script>
 	  $(function() {
 	  	$.get("getDynamics",function(data){
+				console.log(data);
 	  		var len = data.length;
 	  		var content = 	'<div class="weui-cells__title">'+
 			        		'</div>'+
 			        		'<div class="weui-cells">';
-	  		for (var i=len-1;i>=0;i--){
-	  			console.log(data[i]);
+	  		for (var i = 0; i < len; i++){
 	  			content += '<a class="weui-cell weui-cell_access" href="__URL__/'+ data[i].url +'">'+
 			                	'<div class="weui-cell__bd">'+
 			                    	'<p>'+data[i].account+data[i].description+'</p>'+
@@ -91,7 +91,7 @@
 	  	});
 	  });
 	</script>
-	
+
 
 </body>
 </html>

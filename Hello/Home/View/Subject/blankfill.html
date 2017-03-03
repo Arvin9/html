@@ -120,7 +120,6 @@
 	    function queryBlankfill(){
 	    	$.post("queryBlankfill",{solution:""},function(data){
 	    		// 没有题目时提示没有题目
-	    		console.info(data);
 	    		if(!data){
 		  			$('#subject').text("没有内容啦！");
 		  			$('#caption').text("没有题目啦！");

@@ -46,7 +46,7 @@ class AnalyzeController extends Controller {
         $sql .= "  on b.category_id=c.id) ";
         $sql .= "left join think_statistics s ";
         $sql .= "on b.category_id=s.category_id ";
-        $sql .= "where s.user_id = 1010 ";
+        $sql .= "where s.user_id = ".$user_id." ";
         $sql .= "group by c.id ";
 
         $result = $Model->query($sql);
