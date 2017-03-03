@@ -160,7 +160,7 @@ class SubjectController extends Controller {
 			$Record->where($condition)->setInc('count'); //count记录加1
 			//返回错误信息
 			$response['status'] = 400;
-			$response['message'] = "答题错误！";
+			$response['message'] = "代码是严谨的，请检查答案！";
 			$response['data'] = false;
 		}
 		$this->ajaxReturn($response);
