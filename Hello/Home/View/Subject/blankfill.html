@@ -14,7 +14,7 @@
 <body ontouchstart>
 
 
-	<div class="page tabbar" style="height: 100%;">		
+	<div class="page tabbar" style="height: 100%;">
 	    <div class="page__bd" style="height: 100%;">
 	        <div class="weui-tab" style="height: 100%;">
 	            <div id="panel" class="weui-tab__panel" style="height: 100%;">
@@ -31,7 +31,7 @@
 			                </div>
 			            </div>
 			        </div>
-					
+
 			        <br>
 
 					<div class="weui-form-preview">
@@ -53,14 +53,14 @@
 			                    	没有题目啦！
 			                    </span>
 			                </div>
-			                
+
 			                <div class="weui-form-preview__item">
 			                    <label class="weui-form-preview__label">
 			                    	内容
 			                    </label>
-			                    <span class="weui-form-preview__value" id="subject">
+			                    <code align="left" class="weui-form-preview__value" id="subject">
 			                    	没有内容啦！
-			                    </span>
+			                    </code>
 			                </div>
 
 			            </div>
@@ -134,7 +134,7 @@
 		  			$("#commitBt").attr("disabled","disabled");
 		  			return;
 	    		}
-	  			
+
 	  			$('#id').val(data.id);
 	  			$('#category_id').val(data.category_id);
 	  			$('#subject').text(data.subject);
@@ -150,7 +150,7 @@
 	    		$.alert("答案不能为空！");
 	    		return;
 	    	}
-	    	
+
 	    	$.post("respondence",{
 	    			category_id:$('#category_id').val(),
 	    			id:$('#id').val(),
@@ -161,11 +161,12 @@
 		  			if('200'==data.status){
 		  				$.alert(data.message);
 		  				queryBlankfill();
+							$('#solution').val('');
 		  			}
 		  			if('400'==data.status){
 		  				$.alert(data.message);
 		  			}
-		  			
+
 	  		});
 	    }
 
@@ -180,7 +181,7 @@
 		  			queryBlankfill();
 	  		});
 	    }
-	  	
+
 	</script>
 
 </body>

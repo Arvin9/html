@@ -13,7 +13,7 @@
 </head>
 <body ontouchstart>
 
-	<div class="page tabbar" style="height: 100%;">		
+	<div class="page tabbar" style="height: 100%;">
 	    <div class="page__bd" style="height: 100%;">
 	        <div class="weui-tab" style="height: 100%;">
 	            <div id="panel" class="weui-tab__panel" style="height: 100%;">
@@ -30,7 +30,7 @@
 			                </div>
 			            </div>
 			        </div>
-					
+
 			        <br>
 			        <div class="weui-media-box__bd">
 				        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
@@ -71,16 +71,35 @@
 	<script src="__ROOT__/Public/weui/js/echarts.min.js"></script>
 	<script>
 		$(function() {
-			// 基于准备好的dom，初始化echarts实例
-        	var myChart = echarts.init(document.getElementById('radar'));
-			// 使用刚指定的配置项和数据显示图表。
-        	myChart.setOption(option);
-	    });
+				// 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('radar'));
+				// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
 
-	    option = {
+				// 获取学习指标
+				$.post("__URL__/exerciseIndicator",{},function(data){
+						console.log(data);
+						if (data) {
+								myChart.setOption({
+										polar : [{
+												indicator : data.indicator
+										}],
+									  series : [{
+												data : [{
+														name : '类别',
+														value : data.value
+												}]
+										}]
+								});
+						}
+				});
+
+	  });
+
+	  option = {
 		    title : {
-		        text: '多雷达图',
-		        subtext: '纯属虚构'
+		        text: '学习指标',
+		        subtext: '类别'
 		    },
 		    tooltip : {
 		        trigger: 'axis'
@@ -100,33 +119,23 @@
 		        }
 		    },
 		    calculable : true,
-		    polar : [
-		        {
-		            indicator : [{text:'1月',max:10},{text:'2月',max:10},{text:'3月',max:10},{text:'4月',max:100},{text:'5月',max:100},{text:'6月',max:100},{text:'7月',max:100},{text:'8月',max:100},{text:'9月',max:100},{text:'10月',max:100},{text:'11月',max:100},{text:'12月',max:150}],
-		            center : ['50%', '50%'],
-		            radius : '50%'
-		        }
-		    ],
-		    series : [
-		    	{
-		            type: 'radar',
-		            polarIndex : 0,
-		            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-		            data : [
-		                {
-		                    name : '降水量',
-		                    value : [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 75.6, 82.2, 48.7, 18.8, 6.0, 2.3],
-		                },
-		                {
-		                    name:'蒸发量',
-		                    value:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 35.6, 62.2, 32.6, 20.0, 6.4, 150]
-		                }
-		            ]
-		        }
-		    ]
+				polar : [{
+						indicator : [{}],
+						center : ['50%', '50%'],
+						radius : '50%'
+				}],
+				series : [{
+						type: 'radar',
+						polarIndex : 0,
+						itemStyle: {normal: {areaStyle: {type: 'default'}}},
+						data : [{
+								name : '类别',
+								value : []
+						}]
+				}]
 		};
-                    
-	  	
+
+
 	</script>
 
 </body>

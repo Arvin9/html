@@ -70,7 +70,7 @@ class IndexController extends Controller {
 
             //将处理过后的密码与数据库中存放的进行验证
             if ($temp == $passwordHandle) {
-                //声明用户信息
+                //声明用户信息并存入session中
                 $user_info  = array();
                 $user_info['user_id'] = $id;
                 $user_info['account'] = $account;
