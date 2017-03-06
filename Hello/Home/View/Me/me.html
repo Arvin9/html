@@ -35,7 +35,7 @@
 					                <div class="weui-cell__bd">
 					                    <p>修改资料</p>
 					                </div>
-					                <div class="weui-cell__ft">说明文字</div>
+					                <div class="weui-cell__ft"></div>
 					            </a>
 					        </div>
 									<div class="weui-cells__title"></div>
@@ -180,9 +180,77 @@
 
 		// 修改个人信息
 		function updatePersonalInformation(){
+			  $.modal({
+					  title: '修改个人信息',
+					  text: '<p class="weui-prompt-text">需为有效邮箱地址!</p>' +
+						  		'<input type="text" class="weui-input weui-prompt-input" id="weui-prompt-real-name" value="" placeholder="请输入昵称" />' +
+							  	'<input type="text" class="weui-input weui-prompt-input" id="weui-prompt-mailbox" value="" placeholder="请确认邮箱地址" />',
+					  autoClose: false,
+					  buttons: [{
+						  	text: "取消",
+						  	className: "default",
+							  onClick: function(){
+								  	$.closeModal();
+						  	}
+					  },{
+						  	text: "确认",
+							  onClick: function(){
+								  	// 点击确认按钮
+										if (verifyRealName() && verifyEmail()) {
+												var real_name = $('#weui-prompt-real-name').val();
+												var mailbox = $('#weui-prompt-mailbox').val();
+												$.post("updatePersonalInformation",{real_name:real_name,mailbox:mailbox},function(result){
+														if (result.data) {
+																$.alert(result.message);
+														} else {
+																$.alert(result.message);
+														}
+												});
+												$.closeModal();
+										}
 
+								}
+						}]
+			  });
+
+				// 查询信息、回填
+				$.get("querryPersonalInformation",function(result){
+						$('#weui-prompt-real-name').val(result.data.real_name);
+						$('#weui-prompt-mailbox').val(result.data.mailbox);
+				});
+
+				$('#weui-prompt-real-name').keyup(verifyRealName);
+				$('#weui-prompt-mailbox').keyup(verifyEmail);
 		}
 
+		// 验证邮箱是否符合规范
+		function verifyEmail(){
+				var ret = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ ;
+				var mailbox = $('#weui-prompt-mailbox').val();
+				if (ret.test(mailbox)) {
+						$('.weui-prompt-text').text('可以修改');
+						$('.weui-prompt-text').css('color','#999');
+						return true;
+				} else {
+						$('.weui-prompt-text').text('邮箱地址无效!');
+						$('.weui-prompt-text').css('color','red');
+						return false;
+				}
+		}
+		// 验证昵称是否符合规范
+		function verifyRealName(){
+				var ret = /^[\u4e00-\u9fa5]{2,6}$/;
+				var realName = $('#weui-prompt-real-name').val();
+				if (ret.test(realName)) {
+						$('.weui-prompt-text').text('可以修改');
+						$('.weui-prompt-text').css('color','#999');
+						return true;
+				} else {
+						$('.weui-prompt-text').text('昵称需为2-6中文');
+						$('.weui-prompt-text').css('color','red');
+						return false;
+				}
+		}
 	</script>
 
 </body>

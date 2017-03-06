@@ -64,6 +64,49 @@ class MeController extends Controller {
         }
         $this->ajaxReturn($response);
     }
+    // 修改个人信息
+    public function updatePersonalInformation(){
+        $user_info  = $_SESSION['user_info'];
+        $user_id    = $user_info['user_id'];
+        $real_name  = $_POST['real_name'];
+        $mailbox    = $_POST['mailbox'];
+        // 更新用户信息
+        $User = D('User');
+        // 要修改的数据对象属性赋值
+        $data['real_name'] = $real_name;
+        $data['mailbox'] = $mailbox;
+        $condition['id'] = $user_id;
+        $result = $User->where($condition)->save($data);
+        if($result) {
+            $response['message'] = "修改成功！";
+            $response['data'] = true;
+        }else{
+            $response['message'] = "修改失败！";
+            $response['data'] = false;
+        }
+        $this->ajaxReturn($response);
+    }
+
+    // 查询用户个人信息
+    public function querryPersonalInformation(){
+        $user_info  = $_SESSION['user_info'];
+        $user_id    = $user_info['user_id'];
+        $User = D('User');
+        $condition['id'] = $user_id;
+        // 把查询条件传入查询方法
+        $result = $User->where($condition)->select();
+        if($result) {
+            $response['message'] = "查询成功！";
+            $response['state'] = true;
+            $data['real_name'] =  $result[0]['real_name'];
+            $data['mailbox']   =  $result[0]['mailbox'];
+            $response['data']  = $data;
+        }else{
+            $response['message'] = "查询失败！";
+            $response['state'] = false;
+        }
+        $this->ajaxReturn($response);
+    }
 
 
 }

@@ -67,6 +67,7 @@ class IndexController extends Controller {
         if($result){
             $id = $result[0]['id'];
             $salt = $result[0]['salt'];
+            $real_name = $result[0]['real_name'];
             $passwordHandle = $result[0]['password'];
 
             //将用户输入的密码+用户名+salt并进行MD5操作
@@ -77,7 +78,11 @@ class IndexController extends Controller {
                 //声明用户信息并存入session中
                 $user_info  = array();
                 $user_info['user_id'] = $id;
-                $user_info['account'] = $account;
+                if ($real_name) {
+                    $user_info['account'] = $real_name;
+                } else {
+                    $user_info['account'] = $account;
+                }
                 $_SESSION['user_info'] = $user_info;
 
                 // 插入用户登录成功动态
