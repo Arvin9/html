@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>blank</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+	<!-- 引入 WeUI -->
+    <link rel="stylesheet" href="__ROOT__/Public/weui/css/weui.min.css"/>
+    <link rel="stylesheet" href="__ROOT__/Public/weui/css/jquery-weui.min.css"/>
+<style type="text/css">
+   	html,body{height: 100%;}
+</style>
+</head>
+<body ontouchstart>
+
+	<div class="page tabbar" style="height: 100%;">
+	    <div class="page__bd" style="height: 100%;">
+					<div class="weui-tab" style="height: 100%;">
+	        		<div id="panel" class="weui-tab__panel" style="height: 100%;">
+	            		<div class="weui-cells__title">
+	            		</div>
+	            		<div class="weui-cells">
+			            		<div class="weui-cell">
+			                		<div class="weui-cell__bd">
+			                    		<p>个人页面</p>
+			                		</div>
+			                		<div class="weui-cell__ft">
+			                				{$account}
+			                		</div>
+			            		</div>
+			        		</div>
+									<div class="weui-cells__title"></div>
+					        <div class="weui-cells">
+					            <a class="weui-cell weui-cell_access" href="javascript:;">
+					                <div class="weui-cell__bd">
+					                    <p>修改资料</p>
+					                </div>
+					                <div class="weui-cell__ft">说明文字</div>
+					            </a>
+					        </div>
+									<div class="weui-cells__title"></div>
+					        <div class="weui-cells">
+					            <a class="weui-cell weui-cell_access" href="javascript:;">
+					                <div class="weui-cell__bd">
+					                    <p>修改密码</p>
+					                </div>
+					                <div class="weui-cell__ft">说明文字</div>
+					            </a>
+					        </div>
+									<div class="weui-cells__title"></div>
+					        <div class="weui-cells">
+					            <a class="weui-cell weui-cell_access" href="javascript:;" onclick="logout()">
+					                <div class="weui-cell__bd">
+					                    <p>注销</p>
+					                </div>
+					                <div class="weui-cell__ft"></div>
+					            </a>
+					        </div>
+
+
+			        		<br>
+			        		<div class="weui-media-box__bd">
+				        			<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+	    								<div id="radar" style="width: 100%;height:400px;"></div>
+									</div>
+
+        			</div>
+	            <div class="weui-tabbar">
+	                <a href="__URL__/home" class="weui-tabbar__item weui-bar__item_on">
+	                    <span style="display: inline-block;position: relative;">
+	                        <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+	                        <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+	                    </span>
+	                    <p class="weui-tabbar__label">首页</p>
+	                </a>
+	                <a href="__URL__/blankfill" class="weui-tabbar__item">
+	                    <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+	                    <p class="weui-tabbar__label">填空</p>
+	                </a>
+	                <a href="__URL__/analyze" class="weui-tabbar__item">
+	                    <span style="display: inline-block;position: relative;">
+	                        <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+	                        <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+	                    </span>
+	                    <p class="weui-tabbar__label">发现</p>
+	                </a>
+	                <a href="javascript:;" class="weui-tabbar__item">
+	                    <img src="__ROOT__/Public/weui/images/icon_tabbar.png" alt="" class="weui-tabbar__icon">
+	                    <p class="weui-tabbar__label">我</p>
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<script src="__ROOT__/Public/weui/js/jquery-2.1.4.js"></script>
+	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
+	<script src="__ROOT__/Public/weui/js/echarts.min.js"></script>
+	<script>
+		$(function() {
+
+
+	  });
+		function logout(){
+			$.confirm("确认注销？", function() {
+					//点击确认后的回调函数
+					window.location.href = '__URL__/logout';
+			}, function() {
+					//点击取消后的回调函数
+			});
+		}
+
+	</script>
+
+</body>
+</html>
