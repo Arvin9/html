@@ -35,7 +35,35 @@ class MeController extends Controller {
         $_SESSION = array();
         $this->redirect('Index/index');
     }
+    // 修改密码
+    public function changePassword(){
+        $user_info  = $_SESSION['user_info'];
+        $user_id    = $user_info['user_id'];
+        $account    = $user_info['account'];
+        $password   = $_POST['password'];
 
+        $salt = md5(time());
+        //将用户输入的密码+用户名+salt并进行MD5操作
+        $md5_password = md5($password.$account.$salt);
+
+        // 更新用户密码
+        $User = D('User');
+        // 要修改的数据对象属性赋值
+        $data['salt'] = $salt;
+        $data['password'] = $md5_password;
+        $condition['id'] = $user_id;
+
+        $result = $User->where($condition)->save($data);
+
+        if($result) {
+            $response['message'] = "修改成功,请重新登录！";
+            $response['data'] = true;
+        }else{
+            $response['message'] = "修改失败！";
+            $response['data'] = false;
+        }
+        $this->ajaxReturn($response);
+    }
 
 
 }

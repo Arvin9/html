@@ -148,7 +148,7 @@ class IndexController extends Controller {
         //将用户输入的密码+用户名+salt并进行MD5操作
         $md5_password = md5($password.$account.$salt);
 
-        // 插入用户登录成功动态
+        // 注册用户
         $User = D('User');
 
         $User->account = $account;

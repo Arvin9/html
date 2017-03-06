@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>blank</title>
+	<title>Me</title>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 	<!-- 引入 WeUI -->
@@ -31,7 +31,7 @@
 			        		</div>
 									<div class="weui-cells__title"></div>
 					        <div class="weui-cells">
-					            <a class="weui-cell weui-cell_access" href="javascript:;">
+					            <a class="weui-cell weui-cell_access" href="javascript:;" onclick="updatePersonalInformation()">
 					                <div class="weui-cell__bd">
 					                    <p>修改资料</p>
 					                </div>
@@ -40,11 +40,11 @@
 					        </div>
 									<div class="weui-cells__title"></div>
 					        <div class="weui-cells">
-					            <a class="weui-cell weui-cell_access" href="javascript:;">
+					            <a class="weui-cell weui-cell_access" href="javascript:;" onclick="changePassword()">
 					                <div class="weui-cell__bd">
 					                    <p>修改密码</p>
 					                </div>
-					                <div class="weui-cell__ft">说明文字</div>
+					                <div class="weui-cell__ft"></div>
 					            </a>
 					        </div>
 									<div class="weui-cells__title"></div>
@@ -61,7 +61,7 @@
 			        		<br>
 			        		<div class="weui-media-box__bd">
 				        			<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-	    								<div id="radar" style="width: 100%;height:400px;"></div>
+
 									</div>
 
         			</div>
@@ -95,10 +95,9 @@
 
 	<script src="__ROOT__/Public/weui/js/jquery-2.1.4.js"></script>
 	<script src="__ROOT__/Public/weui/js/jquery-weui.js"></script>
-	<script src="__ROOT__/Public/weui/js/echarts.min.js"></script>
+	<script src="__ROOT__/Public/weui/js/md5.min.js"></script>
 	<script>
 		$(function() {
-
 
 	  });
 		function logout(){
@@ -112,6 +111,76 @@
 	  				onCancel: function () {
 	  				}
 				});
+		}
+
+		function changePassword(){
+				$.modal({
+						title: '修改密码',
+						text: '<p class="weui-prompt-text">密码需为6-20位的字母或数字！</p>' +
+            			'<input type="password" class="weui-input weui-prompt-input" id="weui-prompt-password" value="" placeholder="请输入密码" />' +
+            			'<input type="password" class="weui-input weui-prompt-input" id="weui-prompt-password2" value="" placeholder="请确认密码" />',
+						autoClose: false,
+						buttons: [{
+								text: "取消",
+								className: "default",
+								onClick: function(){
+										$.closeModal();
+								}
+						},{
+								text: "确认",
+								onClick: function(){
+										// 点击确认按钮
+										if (verifyPassword() && confirmPassword()) {
+												var password = $('#weui-prompt-password').val();
+												$.post("changePassword",{password:hex_md5(password)},function(result){
+														if (result.data) {
+																$.alert(result.message);
+																setTimeout(function () {
+			                          		window.location.href = '__URL__/logout';
+			                        	}, 3000);
+														} else {
+															  $.alert(result.message);
+														}
+												});
+												$.closeModal();
+										}
+								}
+						}]
+				});
+				// 绑定用户密码校验
+				$('#weui-prompt-password').keyup(verifyPassword);
+				$('#weui-prompt-password2').keyup(confirmPassword);
+		}
+		// 验证密码是否符合要求
+		function verifyPassword(){
+				var ret = /^([a-zA-Z0-9]|[._]){6,20}$/;
+			 	var password = $('#weui-prompt-password').val();
+				if (ret.test(password)) {
+            $('.weui-prompt-text').css('color','#999');
+						return true;
+        } else {
+            $('.weui-prompt-text').css('color','red');
+						return false;
+        }
+		}
+		// 验证两次输入密码是否一致
+		function confirmPassword(){
+    		var newPassword = $('#weui-prompt-password').val();
+        var confirmPassword = $('#weui-prompt-password2').val();
+        if (newPassword != confirmPassword) {
+            $('.weui-prompt-text').text('两次输入密码不一致!');
+            $('.weui-prompt-text').css('color','red');
+						return false;
+        } else {
+						$('.weui-prompt-text').text('可以修改');
+            $('.weui-prompt-text').css('color','#999');
+						return true;
+        }
+    }
+
+		// 修改个人信息
+		function updatePersonalInformation(){
+
 		}
 
 	</script>
