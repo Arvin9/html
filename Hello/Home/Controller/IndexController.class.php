@@ -26,7 +26,7 @@ class IndexController extends Controller {
         // 检验用户是否登陆
         $user_info = $_SESSION['user_info'];
         if(is_null($user_info['user_id'])){
-            $this->display('Index/index');
+            $this->redirect('Index/index');
             return;
         }
         // 不带任何参数 自动定位当前操作的模板文件
@@ -38,7 +38,7 @@ class IndexController extends Controller {
         // 检验用户是否登陆
         $user_info = $_SESSION['user_info'];
         if(is_null($user_info['user_id'])){
-            $this->display('Index/index');
+            $this->redirect('Index/index');
             return;
         }
         $this->assign('account',$user_info['account']);

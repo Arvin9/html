@@ -22,7 +22,7 @@ class MeController extends Controller {
         // 检验用户是否登陆
         $user_info = $_SESSION['user_info'];
         if(is_null($user_info['user_id'])){
-            $this->display('Index/index');
+            $this->redirect('Index/index');
             return;
         }
 

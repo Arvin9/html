@@ -19,10 +19,9 @@ class AnalyzeController extends Controller {
 	  //主页面
     public function analyze(){
         // 检验用户是否登陆
-
         $user_info = $_SESSION['user_info'];
         if(is_null($user_info['user_id'])){
-            $this->display('Index/index');
+            $this->redirect('Index/index');
             return;
         }
         // 插入用户进入分析页面动态
