@@ -11,6 +11,10 @@ class IndexController extends Controller {
     public function analyze(){
         $this->redirect('Analyze/analyze');     // 重定向
     }
+    //访问me时重定向到Me下
+    public function me(){
+        $this->redirect('Me/me');     // 重定向
+    }
 
     //注册页面
     public function register(){

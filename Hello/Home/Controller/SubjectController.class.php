@@ -11,6 +11,10 @@ class SubjectController extends Controller {
     public function home(){
         $this->redirect('Index/home');   // 重定向
     }
+    //访问me时重定向到Me下
+    public function me(){
+        $this->redirect('Me/me');     // 重定向
+    }
 
 	   // 填空题页面
 	  public function blankfill(){
