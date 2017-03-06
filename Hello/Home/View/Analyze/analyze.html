@@ -34,7 +34,8 @@
 			        <br>
 			        <div class="weui-media-box__bd">
 				        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
-	    				<div id="radar" style="width: 100%;height:400px;"></div>
+	    				<div id="radar" style="width: 100%;height:350px;"></div>
+							<div id="finish_rate" style="width: 100%;height:350px;"></div>
 					</div>
 
         		</div>
@@ -72,15 +73,18 @@
 	<script>
 		$(function() {
 				// 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('radar'));
+        var radarChart = echarts.init(document.getElementById('radar'));
 				// 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        radarChart.setOption(radarOption);
+				// 基于准备好的dom，初始化echarts实例
+        var rateChart = echarts.init(document.getElementById('finish_rate'));
+				// 使用刚指定的配置项和数据显示图表。
+        rateChart.setOption(rateOption);
 
 				// 获取学习指标
 				$.post("__URL__/exerciseIndicator",{},function(data){
-						console.log(data);
 						if (data) {
-								myChart.setOption({
+								radarChart.setOption({
 										polar : [{
 												indicator : data.indicator
 										}],
@@ -93,10 +97,23 @@
 								});
 						}
 				});
+				// 获取完成率
+				$.post("__URL__/finishRate",{},function(result){
+						if (result) {
+								rateChart.setOption({
+										series: [{
+												data: [{
+														value: result.data,
+														name: '完成率'
+												}]
+									  }]
+								});
+						}
+				});
 
 	  });
 
-	  option = {
+	  radarOption = {
 		    title : {
 		        text: '学习指标',
 		        subtext: '类别'
@@ -133,6 +150,29 @@
 								value : []
 						}]
 				}]
+		};
+
+		rateOption = {
+		    tooltip : {
+		        formatter: "{a} <br/>{b} : {c}%"
+		    },
+		    toolbox: {
+		        feature: {
+		            restore: {},
+		            saveAsImage: {}
+		        }
+		    },
+		    series: [
+		        {
+		            name: '业务指标',
+		            type: 'gauge',
+		            detail: {formatter:'{value}%'},
+		            data: [{
+									value: 0,
+									name: '完成率'
+								}]
+		        }
+		    ]
 		};
 
 

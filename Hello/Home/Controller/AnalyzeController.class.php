@@ -38,7 +38,7 @@ class AnalyzeController extends Controller {
     /**
      * 学习指标
      */
-    function exerciseIndicator(){
+    public function exerciseIndicator(){
         //获取用户ID
         $user_id = $_SESSION['user_info']['user_id'];
 
@@ -65,8 +65,35 @@ class AnalyzeController extends Controller {
         $response['value'] = $value;
 
         $this->ajaxReturn($response);
-
     }
+    /**
+     * 完成率
+     */
+    public function finishRate(){
+        //获取用户ID
+        $user_id = $_SESSION['user_info']['user_id'];
 
+        $Model = new Model(); // 实例化一个model对象 没有对应任何数据表
+        // 查询个类别题目总量及用户答题情况
+        $sql  = "select count(b.id) blankfills,count(r.blankfill_id) answers ";
+        $sql .= "from think_blankfill b ";
+        $sql .= "left join ( ";
+        $sql .= "  select * ";
+        $sql .= "  from think_record r ";
+        $sql .= "where  r.user_id = ".$user_id." ) r ";
+        $sql .= "on b.id = r.blankfill_id ";
+
+        $result = $Model->query($sql);
+        if ($result) {
+            // 数据处理
+            $response['data'] = round(($result[0]['answers'] / $result[0]['blankfills'])*100,2);
+            $response['state'] = true;
+        } else {
+            // 返回用户已存在
+            $response['message'] = "查询失败！";
+            $response['state'] = false;
+        }
+        $this->ajaxReturn($response);
+    }
 
 }
