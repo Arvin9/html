@@ -102,12 +102,16 @@
 
 	  });
 		function logout(){
-			$.confirm("确认注销？", function() {
-					//点击确认后的回调函数
-					window.location.href = '__URL__/logout';
-			}, function() {
-					//点击取消后的回调函数
-			});
+				$.confirm({
+						title:'警告',
+						text: "确认注销？",
+						onOK: function () {
+	    					//点击确认
+								window.location.href = '__URL__/logout';
+	  				},
+	  				onCancel: function () {
+	  				}
+				});
 		}
 
 	</script>

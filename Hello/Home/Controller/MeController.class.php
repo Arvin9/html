@@ -16,6 +16,7 @@ class MeController extends Controller {
         $this->redirect('Analyze/analyze');     // 重定向
     }
 
+
 	  //主页面
     public function me(){
         // 检验用户是否登陆
@@ -32,7 +33,7 @@ class MeController extends Controller {
     // 退出登录
     public function logout(){
         $_SESSION = array();
-        $this->display('Index/index');
+        $this->redirect('Index/index');
     }
 
 
