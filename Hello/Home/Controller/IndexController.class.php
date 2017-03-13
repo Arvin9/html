@@ -63,12 +63,16 @@ class IndexController extends Controller {
             $salt = $result[0]['salt'];
             $real_name = $result[0]['real_name'];
             $passwordHandle = $result[0]['password'];
+            $is_lock = $result[0]['is_lock'];
 
             //将用户输入的密码+用户名+salt并进行MD5操作
             $temp = md5($password.$account.$salt);
 
-            //将处理过后的密码与数据库中存放的进行验证
-            if ($temp == $passwordHandle) {
+            // 判断账号是否被锁定,账号被锁定提示消息
+            // 将处理过后的密码与数据库中存放的进行验证
+            if (1 == $is_lock) {
+                $this->error('账号被锁定！请联系管理员！');
+            } else if ($temp == $passwordHandle) {
                 //声明用户信息并存入session中
                 $user_info  = array();
                 $user_info['user_id'] = $id;
