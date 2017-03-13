@@ -7,9 +7,19 @@
     <!-- 引入 WeUI -->
     <link rel="stylesheet" href="__ROOT__/Public/weui/css/weui.min.css"/>
     <link rel="stylesheet" href="__ROOT__/Public/weui/css/jquery-weui.min.css"/>
+    <style type="text/css">
+    body{
+        background-color: #F8F8F8;
+    }
+    .page__title{
+        color: #00B0F0;
+    }
+    .page__desc{
+        color: #82ABBA;
+    }
+    </style>
 </head>
 <body ontouchstart>
-
 	<div class="page home">
     	<div class="page__hd">
     		<div class="weui-flex">
@@ -19,7 +29,7 @@
             	<div class="weui-flex__item">
             		<div class="placeholder">
             			<h1 class="page__title">登陆</h1>
-						<p class="page__desc">登陆页面</p>
+						<p class="page__desc">在线练习</p>
             		</div>
             	</div>
             	<div class="weui-flex__item">
@@ -39,24 +49,26 @@
 			                <input class="weui-input" type="text" name="account" placeholder="请输入账号"/>
 			            </div>
 			        </div>
-			     	<div class="weui-cells__tips">底部说明文字底部说明文字</div>
+			     	
 
 			        <div class="weui-cell">
 			            <div class="weui-cell__hd">
 			            	<label class="weui-label">密&nbsp;&nbsp;码：</label>
 			            </div>
 			            <div class="weui-cell__bd">
-			                <input class="weui-input" type="password" id="password" placeholder="请输入账号"/>
+			                <input class="weui-input" type="password" id="password" placeholder="请输入密码"/>
 			                <input type="password" name="password" hidden="hidden" />
 			            </div>
 			        </div>
-			        <div class="weui-cells__tips">底部说明文字底部说明文字</div>
+			        <div class="weui-cells__tips">
+                        忘记密码请联系<span style="color: #A2B4BA">594113869@qq.com</span>
+                    </div>
 
 			        <div class="weui-btn-area">
 			            <input class="weui-btn weui-btn_primary" type="submit" value="确定" />
 			        </div>
-			        <div class="weui-cells__tips">
-			        	没有账号？前往<a onclick="register()">注册</a>
+			        <div class="weui-cells__tips" align="center">
+			        	没有账号？前往<a onclick="register()" style="color:#6666FF">注册</a>
 			        </div>
 				</div>
 			</FORM>
