@@ -74,7 +74,7 @@ class AnalyzeController extends Controller {
 
         $Model = new Model(); // 实例化一个model对象 没有对应任何数据表
         // 查询个类别题目总量及用户答题情况
-        $sql  = "select count(b.id) blankfills,count(r.blankfill_id) answers ";
+        $sql  = "select count(b.id) blankfills,sum(r.is_correct) answers ";
         $sql .= "from think_blankfill b ";
         $sql .= "left join ( ";
         $sql .= "  select * ";
