@@ -1,16 +1,26 @@
-<?php 
-		//1、将timestamp,nonce,token按字典序排序
-		$timestamp	= $_GET['timestamp'];
-		$nonce		= $_GET['nonce'];
-		$token		= 'nebula';
-		$signature	= $_GET['signature'];
-		$array		= array($timestamp,$nonce,$token);
-		//2、将排序后的三个参数拼接后用sha1加密
-		$tempstr = implode('',$array);
-		$tempstr = sha1( $tempstr );
-		//3、将加密后的字符串与signature进行对比，判断该请求是否来自微信
-		if( $tempstr == $signature ){
-			echo $_GET['echostr'];
-			exit;
-		}
-?>
+<?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2006-2014 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st <liu21st@gmail.com>
+// +----------------------------------------------------------------------
+
+// 应用入口文件
+
+// 检测PHP环境
+if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
+
+// 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
+define('APP_DEBUG',True);
+
+// 定义应用目录
+define('APP_PATH','./Hello/');
+
+// 引入ThinkPHP入口文件
+require './ThinkPHP/ThinkPHP.php';
+
+// 亲^_^ 后面不需要任何代码了 就是如此简单
